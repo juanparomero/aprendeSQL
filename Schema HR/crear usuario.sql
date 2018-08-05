@@ -1,6 +1,3 @@
-# Se realiza conexión con un usuario administrador
-CONNECT SYSTEM/SYSTEM;
-
 # Se elimina el esquema con la finalidad de volverlo a construir
 DROP USER usuario CASCADE;
 
@@ -20,6 +17,6 @@ CONNECT USUARIO/USUARIO;
 # Se deben ejecutar los script en el siguiente orden. Teniendo en cuenta, que en este ejemplo, los tres ficheros 
 # están en una carpeta llamada SCRIPTS en el escritorio de un sistema operativo Windows. Esto se ha de modificar 
 # indicando la ruta a los ficheros.
-START "%USERPROFILE%\DESKTOP\SCRIPTS\HR_CRE.SQL"
-START "%USERPROFILE%\DESKTOP\SCRIPTS\HR_POPUL.SQL"
-START "%USERPROFILE%\DESKTOP\SCRIPTS\HR_IDX.SQL"
+START "%USERPROFILE%\DESKTOP\Schema HR\HR_CRE.SQL"
+START "%USERPROFILE%\DESKTOP\Schema HR\HR_POPUL.SQL"
+START "%USERPROFILE%\DESKTOP\Schema HR\HR_IDX.SQL"
