@@ -2,15 +2,16 @@
 # SELECT CON FUNCIONES
 ------------------------------------------------------------------------------------------------
 /*
-| 1
-| Mostrar la fecha actual de la siguiente forma:
-| Fecha actual
-| ------------------------------
-| Sábado, 11 de febrero de 2017.
-|
-| El día en plabras con la primera letra en mayúsculas, seguida de una coma, el día en números
-| la palabra "de" el mes en minúscula en palabras, la palabra "de" y el año en cuatro dígitos
-| finalizando con un punto y de etiqueta del campo "Fecha actual"
+ 1
+ Mostrar la fecha actual de la siguiente forma:
+ Fecha actual
+ ------------------------------
+ Sábado, 11 de febrero de 2017. 16:06:06
+
+ El día en palabras con la primera letra en mayúsculas, seguida de una coma, el día en números,
+ la palabra "de", el mes en minúscula en palabras, la palabra "de", el año en cuatro dígitos
+ finalizando con un punto. Luego la hora en formato 24h con minutos y segundos.
+ Y de etiqueta del campo "Fecha actual".
 */
 select rtrim(to_char(sysdate,'Day'))||', '||
     to_char(sysdate,'dd')||' de '||
