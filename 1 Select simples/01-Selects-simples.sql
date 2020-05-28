@@ -4,6 +4,7 @@
 -- 1
 -- Describir la tabla employees
 desc employees;
+--
 -- 2
 -- Datos de la tabla regions
 select *
@@ -31,7 +32,7 @@ from employees;
 select distinct department_id
 from employees;
 -- 8
--- Nombre, apellido, salario ordenador por apellido asc y salario desc
+-- Nombre, apellido y salario ordenado por apellido ascendentemente y salario descendentemente
 select first_name, last_name, salary
 from employees
 order by last_name asc, salary desc;
@@ -49,7 +50,7 @@ where department_id = 30
     and salary < 3000;
 -- 11
 -- nombre, apellido y número de departamento de los empleados
--- que no tengan comisión ordenados por número de departamento 
+-- que no tengan comisión. Ordenados por número de departamento 
 -- del mayor a menor y por apellido.
 select first_name, last_name, department_id
 from employees
@@ -63,11 +64,10 @@ select employee_id, first_name, last_name
 from employees
 where last_name between 'L' and 'R';
 -- 13
--- Nombre de las columnas de la tabla de empleados 'Employees'
-select column_name
-from user_tab_columns
-where table_name = 'EMPLOYEES'
-    and column_name not like '%@_%' escape '@';
+--Lista de apellidos que su segunda letra sea una 'a'
+select last_name
+from employees
+where last_name like '_a%';
 -- 14
 -- Nombre, apellido y el salario de los empleados
 -- pero como salario una etiqueta que indique 
@@ -79,7 +79,36 @@ select first_name,last_name,
         when salary between 4280 and 15230 then 'MEDIO'
         else 'ALTO'
     end salary
-from employees; 
---
+from employees;
+--15
+--Listar los correos concatenados con el texto '@company.com'
+select email || '@company.com'
+from employees;
+--16
+--Lista de nombres de las ciudades que su país es 'US'
+select city
+from locations
+where country_id = 'US';
+--17
+--Lista de nombre de las ciudades que su país no es Estados Unidos
+select city
+from locations
+where country_id != 'US';
+--18
+--Número y nombre de los departamentos que tienen un jefe.
+select department_id, department_name
+from departments
+where manager_id is not null;
+--19
+--Número y nombre de los departamentos que no tienen jefe.
+select department_id, department_name
+from departments
+where manager_id is null;
+--20
+-- Nombre de las columnas de la tabla de empleados 'Employees' que no tienen un guión bajo en el nombre.
+select column_name
+from user_tab_columns
+where table_name = 'EMPLOYEES'
+    and column_name not like '%@_%' escape '@';
 --
 ------------------------------------------------------------------------------------------------
