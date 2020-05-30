@@ -5,17 +5,24 @@
 -- Nombre y apellido del empleado que más gana.
 select first_name, last_name
 from employees
-where salary = (select max(salary) from employees);
+where salary = (
+    select max(salary) 
+    from employees);
 -- 2
 -- Nombre, apellido y salario de los empleados que ganan más que la media de salarios.
 select first_name, last_name, salary
 from employees
-where salary > (select avg(salary) from employees);
+where salary > (
+    select avg(salary) 
+    from employees);
 -- 3
 -- Nombre y apellido del jefe del departamento de Marketing
 select first_name, last_name
 from employees
-where employee_id = (select manager_id from departments where department_name='Marketing');
+where employee_id = (
+    select manager_id 
+    from departments 
+    where department_name='Marketing');
 -- 4
 -- Nombre y apellido  de los empleados del departamento de Marketing
 select first_name, last_name
@@ -25,20 +32,30 @@ where department_id = (
     from departments 
     where department_name = 'Marketing');
 --
-select first_name, last_name
-from employees
+select 
+    first_name, 
+    last_name
+from 
+    employees
     join departments on employees.department_id = departments.department_id
 where
     department_name = 'Marketing');
 -- 5
 -- Nombre, apellido, salario, nombre del departamento y ciudad
 -- del empleado que gana más y el que menos
-select first_name, last_name, salary, department_name, city
-from employees
+select 
+    first_name, 
+    last_name, 
+    salary, 
+    department_name, 
+    city
+from 
+    employees
     join departments on employees.department_id = departments.department_id
     join locations on departments.location_id = locations.location_id
-where salary = (select max(salary) from employees)
-    or salary = (select min(salary) from employees)
+where 
+    salary = (select max(salary) from employees)
+    or salary = (select min(salary) from employees);
 -- 6
 -- Número de empleados y número de departamentos por ciudad (nombre)
 select 
@@ -82,7 +99,9 @@ order by 1;
 -- 9
 -- Listar el nombre, apellido y salario de los tres empleados que ganan más
 select first_name, last_name, salary
-from (select first_name, last_name, salary from employees order by salary desc)
+from (select first_name, last_name, salary 
+    from employees 
+    order by salary desc)
 where rownum < 4;
 -- 10
 -- Imaginad que queremos crear nombres de usuario para direcciones de correo.
@@ -105,14 +124,20 @@ from
 -- 'BAJO' si el salario es menor a la mediabaja (media entre el salario mínimo y la media de salarios)
 -- 'ALTO' si el salario es mayor a la mediaalta (media entre el salario máximo y la media de salarios)
 -- 'MEDIO' si el salario está entre la mediabaja y medialata.
-select first_name,last_name, 
+select 
+    first_name,
+    last_name, 
     case  
         when salary < mediabaja then 'BAJO'
         when salary between mediabaja and mediaalta then 'MEDIO'
         else 'ALTO'
     end salary
-from employees 
-    join (select department_id, trunc((avg(salary)+min(salary))/2) mediabaja, trunc((avg(salary)+max(salary))/2) mediaalta
+from 
+    employees 
+    join (
+        select department_id, 
+            trunc((avg(salary)+min(salary))/2) mediabaja, 
+            trunc((avg(salary)+max(salary))/2) mediaalta
         from employees
         group by department_id) medias
     on(employees.department_id = medias.department_id);
@@ -197,7 +222,7 @@ from
     departments
     join locations on departments.location_id = locations.location_id
 where
-    locations.city = 'Seattle'
+    locations.city = 'Seattle';
 -- 14
 -- Nombre, apellido, email, department_name
 -- de los empleados del departamento con más empleados
@@ -253,5 +278,5 @@ having count(employee_id) in (
     select max(count(employee_id))
     from employees
     group by to_char(hire_date,'yyyy-mm-dd')
-    )
+    );
 ------------------------------------------------------------------------------------------------
