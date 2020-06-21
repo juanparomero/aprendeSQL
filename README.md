@@ -19,6 +19,7 @@ Se empieza desde selects simples y se va avanzando en complejidad al ir añadien
   Es una serie de diapositivas que dan una introducción al lenguaje y lo resumen.
 # Autoevaluación
 - [Introducción a bases de datos](https://forms.gle/NYw97A2Km5ufQR1L6)
+- [Introducción a diseño de base de datos](https://forms.gle/Da1q6LeBmBjkzr2v5)
 # Tutoriales
 - [Aprende SQL en menos de 20 horas](https://www.amazon.es/dp/B084NY3VP7/ref=sr_1_3?__mk_es_ES=ÅMÅŽÕÑ&keywords=aprende+sql&qid=1581454483&sr=8-3)
 - [Instalar Oracle Express Edition XE 18c (Windows)](https://youtu.be/QAAeIQQYN_A)
