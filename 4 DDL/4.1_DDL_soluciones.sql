@@ -134,7 +134,7 @@ alter table components ADD(
         references spaces(guid),
     constraint fk_components_type foreign key (typeGuid)
         references type(guid),
-    constraint ck_components_instalatedOn check(installatedOn <= sysdate),
+    constraint ck_components_instalatedOn check(installatedOn <= sysdate)
 );
 
 alter table types add(
