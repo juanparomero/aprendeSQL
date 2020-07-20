@@ -65,6 +65,25 @@ values(
     sysdate,
     'JDEXTER'
 );
+/*
+Comprobar que se ven los datos insertados de forma conjunta con una JOIN
+y no de forma independiente. Con el fin de comprobar las relaciones.
+*/
+select 
+    first_name, 
+    last_name,
+    department_name,
+    job_title,
+    city,
+    country_name
+FROM
+    employees
+    join jobs on jobs.job_id = employees.job_id
+    join departments on employees.department_id = departments.department_id
+    join locations on locations.location_id = departments.location_id
+    join countries on countries.country_id = locations.country_id
+where
+    employee_id = 108;
 
 /* 2
 Actualizarle el salario a 60000

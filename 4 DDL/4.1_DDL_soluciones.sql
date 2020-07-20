@@ -57,7 +57,7 @@ En las definiciones establacer las siguientes restricciones
 -No es posible dar de alta un espacio sin una planta.
 -No es posiblde dar de alta una planta sin un facility.
 -Dos componentes no pueden llamarse igual, lo mismo pasa con el resto de entidades.
--La fecha de instalación de un componente no puede ser futura.
+-La fecha de instalación de un componente por defecto es la actual.
 -Los nombres no pueden estar vacíos en todas las entidades.
 -Los años de garantia no pueden ser cero ni negativos.
 -Se debe mantener la integridad referencial.
@@ -103,7 +103,7 @@ guid            varchar2(4000),
 name            varchar2(4000) not null,
 description     varchar2(4000),
 serialNumber    varchar2(4000),
-installatedOn   date,
+installatedOn   date default sysdate,
 spaceGuid       varchar2(4000),
 typeGuid        varchar2(4000) not null,
 constraint pk_components_guid primary key(guid),
@@ -133,10 +133,9 @@ alter table components ADD(
     constraint fk_components_space foreign key (spaceGuid)
         references spaces(guid),
     constraint fk_components_type foreign key (typeGuid)
-        references type(guid),
-    constraint ck_components_instalatedOn check(installatedOn <= sysdate)
+        references types(guid)
 );
 
 alter table types add(
     constraint ck_types_warrantyYears check(warrantyYears > 0)
-)
+);
