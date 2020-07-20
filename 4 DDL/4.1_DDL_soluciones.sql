@@ -10,6 +10,7 @@ Se desea tener una base de datos con la información de instalaciones/edificios 
 
 1-Generar las siguientes tablas
 FACILITIES
+id
 guid
 name
 description
@@ -17,32 +18,36 @@ category
 address
 
 FLOORS
+id
 guid
 name
 category
 description
 height
-facilityGuid
+facilityId
 
 SPACES
+id
 guid
 name
 category
 description
 usableHeight
 area
-floorGuid
+floorId
 
 COMPONENTS
+id
 guid
 name
 description
 serialNumber
 installatedOn
-spaceGuid
-typeGuid
+spaceId
+typeId
 
 TYPES
+id
 guid
 name
 description
@@ -52,7 +57,7 @@ warrantyYears
 
 
 En las definiciones establacer las siguientes restricciones
--Los guid se utilizan como identificadores.
+-Los guid debe ser único.
 -No es posible dar de alta un componente sin un tipo.
 -No es posible dar de alta un espacio sin una planta.
 -No es posiblde dar de alta una planta sin un facility.
@@ -66,74 +71,84 @@ NOTA: Algunos ejercicios provocan errores que deben probar (para ver el error) y
 */
 
 create table facilities(
-guid        varchar2(4000),
-name        varchar2(4000) not null,
-description varchar2(4000),
-category    varchar2(4000),
-address     varchar2(4000),
-constraint pk_facilities_guid primary key(guid),
-constraint uq_facilities_name unique(name)
+    id          number,
+    guid        varchar2(4000),
+    name        varchar2(4000) not null,
+    description varchar2(4000),
+    category    varchar2(4000),
+    address     varchar2(4000),
+    constraint pk_facilities_guid primary key(id),
+    constraint uq_facilities_name unique(name),
+    constraint uq_facilities_guid unique(guid)
 );
 
 create table floors(
-guid            varchar2(4000),
-name            varchar2(4000) not null,
-category        varchar2(4000),
-description     varchar2(4000),
-height          number,
-facilityGuid    varchar2(4000) not null,
-constraint pk_floors_guid primary key(guid),
-constraint uq_floors_name unique(name)
+    id              number,
+    guid            varchar2(4000),
+    name            varchar2(4000) not null,
+    category        varchar2(4000),
+    description     varchar2(4000),
+    height          number,
+    facilityId      number not null,
+    constraint pk_floors_guid primary key(id),
+    constraint uq_floors_name unique(name),
+    constraint uq_floors_guid unique(guid)
 );
 
 create table spaces(
-guid            varchar2(4000),
-name            varchar2(4000) not null,
-category        varchar2(4000),
-description     varchar2(4000),
-usableHeight    number,
-area            number,
-floorGuid       varchar2(4000) not null,
-constraint pk_spaces_guid primary key(guid),
-constraint uq_spaces_name unique(name)
+    id              number,
+    guid            varchar2(4000),
+    name            varchar2(4000) not null,
+    category        varchar2(4000),
+    description     varchar2(4000),
+    usableHeight    number,
+    area            number,
+    floorId         number not null,
+    constraint pk_spaces_guid primary key(id),
+    constraint uq_spaces_name unique(name),
+    constraint uq_spaces_guid unique(guid)
 );
 
 create table components(
-guid            varchar2(4000),
-name            varchar2(4000) not null,
-description     varchar2(4000),
-serialNumber    varchar2(4000),
-installatedOn   date default sysdate,
-spaceGuid       varchar2(4000),
-typeGuid        varchar2(4000) not null,
-constraint pk_components_guid primary key(guid),
-constraint uq_components_name unique(name)
+    id              number,
+    guid            varchar2(4000),
+    name            varchar2(4000) not null,
+    description     varchar2(4000),
+    serialNumber    varchar2(4000),
+    installatedOn   date default sysdate,
+    spaceId         number,
+    typeId          number not null,
+    constraint pk_components_guid primary key(id),
+    constraint uq_components_name unique(name),
+    constraint uq_components_guid unique(guid)
 );
 
 create table types(
-guid            varchar2(4000),
-name            varchar2(4000) not null,
-description     varchar2(4000),
-modelNumber     varchar2(4000),
-color           varchar2(4000),
-warrantyYears   number,
-constraint pk_types_guid primary key(guid),
-constraint uq_types_name unique(name)
+    id              number,
+    guid            varchar2(4000),
+    name            varchar2(4000) not null,
+    description     varchar2(4000),
+    modelNumber     varchar2(4000),
+    color           varchar2(4000),
+    warrantyYears   number,
+    constraint pk_types_guid primary key(id),
+    constraint uq_types_name unique(name),
+    constraint uq_types_guid unique(guid)
 );
 
 alter table floors ADD
-    constraint fk_floors_facility foreign key (facilityGuid)
-        references facilities(guid);
+    constraint fk_floors_facility foreign key (facilityId)
+        references facilities(id);
 
 alter table spaces add
-    constraint fk_spaces_floor foreign key (floorGuid)
-        references floors (guid);
+    constraint fk_spaces_floor foreign key (floorId)
+        references floors (id);
 
 alter table components ADD(
-    constraint fk_components_space foreign key (spaceGuid)
-        references spaces(guid),
-    constraint fk_components_type foreign key (typeGuid)
-        references types(guid)
+    constraint fk_components_space foreign key (spaceId)
+        references spaces(id),
+    constraint fk_components_type foreign key (typeId)
+        references types(id)
 );
 
 alter table types add(
