@@ -1,5 +1,5 @@
 # aprendeSQL
-Ejemplos de SQL usando Oracle como gestor de base de datos. Algunos ejercicios toman en cuenta el gestor y otros pueden ser igualmente implementados en otros gestores de bases de datos. Se puede descargar desde la web oficial de Oracle el software necesario para trabajar, como por ejemplo: Oracle Express Edition (el gestor de base de datos más ligero, suficiente para practicar) y Oracle SQLDeveloper (entorno de trabajo por si no se quiere utilizar la terminal).
+Ejemplos de SQL usando Oracle como gestor de base de datos. Aunque para algunos ejercicios hay que tomar en cuenta el gestor, pueden ser igualmente implementados en otros gestores de bases de datos. El software necesario para trabajar se puede descargar desde la web oficial de Oracle, como por ejemplo: Oracle Express Edition (el gestor de base de datos más ligero, suficiente para practicar) y Oracle SQLDeveloper (entorno de trabajo por si no se quiere utilizar la terminal).
 
 # Tabla de contenido
 - [Contenido](#Contenido)
@@ -10,7 +10,7 @@ Ejemplos de SQL usando Oracle como gestor de base de datos. Algunos ejercicios t
 - [Tutoriales](#Tutoriales)
  
 # Contenido
-Se empieza desde selects simples y se va avanzando en complejidad al ir añadiendo el uso de funciones, subconsultas, joins.
+Se empieza desde selects simples y se va avanzando en complejidad al ir añadiendo el uso de funciones, subconsultas, joins. Luego se continua con algunos ejercicios de DML y DDL.
 ## Referencias Oracle
   Contienen documentación perteneciente a Oracle. Para obtener las últimas versiones u otras se pueden obtener desde la página oficial de Oracle ya que facilita toda la documentación de sus productos. Además del software para poder probarlo.
 ## Schema HR
