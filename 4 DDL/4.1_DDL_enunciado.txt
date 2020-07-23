@@ -52,7 +52,7 @@ warrantyYears
 
 
 En las definiciones establacer las siguientes restricciones
--Los guid se utilizan como identificadores.
+-Los guid deben ser únicos.
 -No es posible dar de alta un componente sin un tipo.
 -No es posible dar de alta un espacio sin una planta.
 -No es posiblde dar de alta una planta sin un facility.
@@ -62,5 +62,4 @@ En las definiciones establacer las siguientes restricciones
 -Los años de garantia no pueden ser cero ni negativos.
 -Se debe mantener la integridad referencial.
 
-NOTA: Algunos ejercicios provocan errores que deben probar (para ver el error) y corregir.
 */
