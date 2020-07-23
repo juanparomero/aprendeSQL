@@ -57,7 +57,7 @@ warrantyYears
 
 
 En las definiciones establacer las siguientes restricciones
--Los guid debe ser único.
+-Los guid deben ser únicos.
 -No es posible dar de alta un componente sin un tipo.
 -No es posible dar de alta un espacio sin una planta.
 -No es posiblde dar de alta una planta sin un facility.
