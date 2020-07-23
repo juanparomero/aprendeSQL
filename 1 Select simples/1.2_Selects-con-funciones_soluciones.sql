@@ -129,8 +129,9 @@ se han dado de alta
 */
 select to_char(hire_date,'Day') Day
 from employees
-having max(count(employee_id)) = 
-    (select max(employee_idd)
+having count(employee_id) = 
+    (select max(count(employee_id))
     from employees
-    group by to_char(hire_date,'Day'));
+    group by to_char(hire_date,'Day'))
+group by to_char(hire_date,'Day');
 ------------------------------------------------------------------------------------------------
