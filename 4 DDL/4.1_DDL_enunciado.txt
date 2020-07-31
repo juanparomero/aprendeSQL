@@ -10,6 +10,7 @@ Se desea tener una base de datos con la información de instalaciones/edificios 
 
 1-Generar las siguientes tablas
 FACILITIES
+id
 guid
 name
 description
@@ -17,32 +18,36 @@ category
 address
 
 FLOORS
+id
 guid
 name
 category
 description
 height
-facilityGuid
+facilityId
 
 SPACES
+id
 guid
 name
 category
 description
 usableHeight
 area
-floorGuid
+floorId
 
 COMPONENTS
+id
 guid
 name
 description
 serialNumber
 installatedOn
-spaceGuid
-typeGuid
+spaceId
+typeId
 
 TYPES
+id
 guid
 name
 description
