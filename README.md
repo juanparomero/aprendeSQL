@@ -6,6 +6,7 @@ Ejemplos de SQL usando Oracle como gestor de base de datos. Aunque para algunos 
   - [Referencias Oracle](#Referencias-Oracle)
   - [Schema HR](#Schema-HR)
   - [SQLPPT](#SQLPPT)
+  - [services](#services)
 - [Autoevaluación](#Autoevaluación)
 - [Tutoriales](#Tutoriales)
  
@@ -15,6 +16,9 @@ Se empieza desde selects simples y se va avanzando en complejidad al ir añadien
   Contienen documentación perteneciente a Oracle. Para obtener las últimas versiones u otras se pueden obtener desde la página oficial de Oracle ya que facilita toda la documentación de sus productos. Además del software para poder probarlo.
 ## Schema HR
   Incluye tres scripts que generan los objetos del esquema HR de Oracle. Y un script con las instrucciones para la creación de un usuario con el cual trabajar.
+## services
+  Ejemplos de archivos para parar e iniciar los servicios que se encargan de que el sistema gestor de base de datos esté operativo. El nombre del servicio puede ser diferente según el nombre de la base de datos o la versión del sistema gestor.
+  Si la base de datos no se utiliza se desaprovecha recursos de la máquina. Por ejemplo, se puede estar consumiendo 1 o 2GB de memoria RAM. Es por ello, que se puede tener al RDBMS detenido si no se lo utiliza.
 ## SQLPPT
   Es una serie de diapositivas que dan una introducción al lenguaje y lo resumen.
 # Autoevaluación
