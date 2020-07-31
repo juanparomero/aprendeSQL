@@ -1,0 +1,3 @@
+net stop OracleXETNSListener
+net stop OracleServiceXE
+pause
