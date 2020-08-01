@@ -14,6 +14,8 @@ Ejemplos de SQL usando Oracle como gestor de base de datos. Aunque para algunos 
 Se empieza desde selects simples y se va avanzando en complejidad al ir añadiendo el uso de funciones, subconsultas, joins. Luego se continua con algunos ejercicios de DML y DDL.
 ## Referencias Oracle
   Contienen documentación perteneciente a Oracle. Para obtener las últimas versiones u otras se pueden obtener desde la página oficial de Oracle ya que facilita toda la documentación de sus productos. Además del software para poder probarlo.
+  - [Database Limits](https://docs.oracle.com/cd/B28359_01/server.111/b28320/limits.htm#REFRN004)
+  - [SQL Language Reference](https://docs.oracle.com/cd/B28359_01/server.111/b28286/toc.htm)
 ## Schema HR
   Incluye tres scripts que generan los objetos del esquema HR de Oracle. Y un script con las instrucciones para la creación de un usuario con el cual trabajar.
 ## services
