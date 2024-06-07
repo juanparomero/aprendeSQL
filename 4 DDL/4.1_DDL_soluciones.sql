@@ -56,7 +56,7 @@ color
 warrantyYears
 
 
-En las definiciones establacer las siguientes restricciones
+En las definiciones establecer las siguientes restricciones
 -Los guid deben ser únicos.
 -No es posible dar de alta un componente sin un tipo.
 -No es posible dar de alta un espacio sin una planta.
