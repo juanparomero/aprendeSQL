@@ -5,8 +5,8 @@ Ejemplos de SQL usando Oracle como gestor de base de datos. Aunque para algunos 
 - [Contenido](#contenido)
   - [Referencias Oracle](#referencias-oracle)
   - [Schema HR](#schema-hr)
-  - [SQLPPT](#sqlppt)
   - [services](#services)
+  - [SQL.pdf](#sqlpdf)
 - [Autoevaluación](#autoevaluación)
 - [Tutoriales](#tutoriales)
  
@@ -25,7 +25,7 @@ Se empieza desde selects simples y se va avanzando en complejidad al ir añadien
   Ejemplos de archivos para parar e iniciar los servicios que se encargan de que el sistema gestor de base de datos esté operativo. El nombre del servicio puede ser diferente según el nombre de la base de datos o la versión del sistema gestor.
   Si la base de datos no se utiliza se desaprovecha recursos de la máquina. Por ejemplo, se puede estar consumiendo 1 o 2GB de memoria RAM. Es por ello, que se puede tener al RDBMS detenido si no se lo utiliza.
 
-### SQLPPT
+### SQL.pdf
   Es una serie de diapositivas que dan una introducción al lenguaje y lo resumen.
 
 ## Autoevaluación
