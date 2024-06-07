@@ -72,6 +72,7 @@ Además se indican las siguientes restricciones:
 -Se debe mantener la integridad referencial.
 
 NOTA: como con cualquier proyecto el cliente facilita ideas de lo que quiere.
-Algunas son útiles para este cometido y otras no. 
+Algunas son útiles para este cometido y otras no 
+(Ej. se menciona restricciones que se necesitarán en el modelo lógico relacional pero no en el modelo conceptual E/R). 
 En un entorno real es necesario educir y aclarar lo que el cliente necesita.
  
