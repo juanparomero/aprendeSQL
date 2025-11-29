@@ -35,7 +35,8 @@ Se empieza desde selects simples y se va avanzando en complejidad al ir añadien
 4. [Data Definition Language](https://forms.gle/kzqJJ4mwZL7AAVMHA)
 
 ## Tutoriales
-- [Aprende SQL en menos de 20 horas](https://www.amazon.es/dp/B084NY3VP7/ref=sr_1_3?__mk_es_ES=ÅMÅŽÕÑ&keywords=aprende+sql&qid=1581454483&sr=8-3)
+- [Aprende SQL en menos de 20 horas](https://www.amazon.es/dp/B084NY3VP7)
+- [Learn SQL in less than 20 hours](https://www.amazon.com/dp/B0D77XR2WJ)
 - [Instalar Oracle Express Edition XE 18c (Windows)](https://youtu.be/QAAeIQQYN_A)
 - [Desinstalar Oracle Express Edition XE 18c (Windows)](https://youtu.be/t52JaQWfrE8)
 - [Crear esquema de ejemplo HR en Oracle XE](https://youtu.be/GLbT72Hm83M)
